@@ -15,11 +15,13 @@ const router = express.Router();
 // Conexão com MySQL
 // ------------------------------
 const conexao = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'projecto'
+  host: process.env.DB_HOST || "localhost",
+  user: process.env.DB_USER || "root",
+  password: process.env.DB_PASS || "",
+  database: process.env.DB_NAME || "projecto",
+  port: process.env.DB_PORT || 3306
 });
+
 
 conexao.connect((erro) => {
     if (erro) {
