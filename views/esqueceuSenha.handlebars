@@ -1,0 +1,29 @@
+<main>
+    <div class="auth-page">
+  <div class="login-container d-flex align-items-center justify-content-center">
+    <div class="login-card shadow-lg">
+      <div class="user-icon text-center mb-4">
+        <span class="material-icons log-icon" >lock_reset</span>
+      </div>
+      <div class="text-center mb-4">
+        <h1 class="mb-2">Recuperar senha</h1>
+        <p class="text-muted">Digite seu email para redefinir a senha</p>
+      </div>
+
+        {{> mensagens}}
+
+      <form action="/esqueceu-senha" method="POST">
+        <div class="form-group">
+          <div class="input-icon">
+            <i class="fa fa-envelope"></i>
+            <input type="email" name="email" class="form-control" placeholder="Email cadastrado">
+          </div>
+        </div>
+        <button type="submit" class="btn btn-gradient btn-block">Enviar link</button>
+      </form>
+      <hr>
+      <p class="text-center">Lembrou a senha? <a href="/login" class="text-primary">Entre aqui</a></p>
+    </div>
+  </div>
+</div>
+</main>

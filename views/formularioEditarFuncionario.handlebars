@@ -1,0 +1,39 @@
+<main class="container my-5">
+  {{> mensagens}}
+
+  <div class="card shadow rounded p-4">
+    <h3 class="mb-4 text-primary">
+      <i class="bi bi-pencil-square"></i> Editar Funcionário
+    </h3>
+
+    <form action="/funcionarios/editar/{{funcionario.id}}" method="POST">
+      <div class="form-group mb-3">
+        <label for="nome" class="form-label">Nome</label>
+        <input type="text" class="form-control" id="nome" name="nome"
+               value="{{funcionario.nome}}" required>
+      </div>
+
+      <div class="form-group mb-3">
+        <label for="email" class="form-label">E-mail</label>
+        <input type="email" class="form-control" id="email" name="email"
+               value="{{funcionario.email}}" required>
+      </div>
+
+     <div class="form-group mb-3">
+  <label for="senha" class="form-label">Senha</label>
+  <input type="password" class="form-control" id="senha" name="senha" value="" autocomplete="new-password">
+  <small class="text-muted">Preencha para alterar a senha. Deixe em branco para manter a atual.</small>
+</div>
+
+<div class="form-group mb-3">
+  <label for="confirmarSenha" class="form-label">Confirmar Senha</label>
+  <input type="password" class="form-control" id="confirmarSenha" name="confirmarSenha" value="" "new-password">
+</div>
+
+      <div class="d-flex gap-2">
+        <button type="submit" class="btn btn-success">Salvar</button>
+        <a href="/dashboard" class="btn btn-secondary">Cancelar</a>
+      </div>
+    </form>
+  </div>
+</main>

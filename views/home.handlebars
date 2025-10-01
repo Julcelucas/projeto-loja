@@ -1,0 +1,180 @@
+<main>
+    
+    <div class="first-slide">
+      <!-- Swiper -->
+        <div class="swiper mySwiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="/imagens/slide img/happy-1281590_1280.jpg" alt="Slide 1">
+          <div class="slide-text">
+            <h2>Brinquedos Que Encantam Os Mais Pequenos!</h2>
+    <p>A diversão das crianças está garantida com nossa linha de brinquedos educativos e criativos. Produtos que estimulam a imaginação, respeitam a segurança e acompanham cada fase do desenvolvimento infantil.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="/imagens/slide img/minion-890831_1280.jpg" alt="Slide 1">
+          <div class="slide-text">
+            <h2>Novidades Em Tecnologia Que Não Podes Perder!</h2>
+    <p>Seja o primeiro a conhecer os lançamentos mais aguardados do mercado. Smartphones, acessórios e eletrônicos modernos que unem desempenho e inovação para tornar o seu dia a dia mais prático e conectado.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="/imagens/slide img/toy-2127789_1280.jpg" alt="Slide 1">
+          <div class="slide-text">
+            <h2>Mochilas e Acessórios Para o Seu Dia a Dia!</h2>
+    <p>Mais do que produtos, oferecemos soluções para o seu dia a dia. Mochilas, acessórios e utilidades que unem design moderno, resistência e praticidade, ajudando você a expressar seu estilo em cada detalhe.</p>
+          </div>
+        </div>
+        <div class="swiper-slide">
+          <img src="/imagens/slide img/arranjo-de-mesa-com-mochila.jpg" alt="Slide 1">
+          <div class="slide-text">
+           <h2>Promoções Imperdíveis Para os Clientes!</h2>
+    <p>A cada ano preparamos ofertas exclusivas para você economizar sem abrir mão da qualidade. Encontre produtos selecionados com preços incríveis e transforme suas compras em verdadeiras oportunidades .</p>
+          </div>
+        </div>
+      </div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+      <div class="swiper-pagination"></div>
+        </div>
+    </div>
+  </div>
+    </div>
+
+  <div class="ver-categ">
+  <div class="categ-topo">
+    <div class="categ-texto">
+      <h2>Categorias</h2>
+      <p class="seta">Veja as Categorias <img src="/imagens/slide img/seta-direita-de-linha-reta-fina.png" alt=""></p>
+    </div>
+    <div class="categ-botoes">
+      <div class="swiper-button-prev swiper-button-prev-2"></div>
+      <div class="swiper-button-next swiper-button-next-2"></div>
+    </div>
+  </div>
+
+  <div class="swiper mySwiper_2">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">
+        <a href="/produtos/categoria/alimenticio">
+          <p>Alimentício</p>
+          <img src="/imagens/slide img/pacote.png" alt="">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="/produtos/categoria/eletronico">
+          <p>Electrónico</p>
+          <img src="/imagens/slide img/fones-de-ouvido.png" alt="">
+        </a>
+      </div>
+      <div class="swiper-slide">
+        <a href="/produtos/categoria/vestuario">
+          <p>Vestuário</p>
+          <img src="/imagens/slide img/camisa.png" alt="">
+        </a>
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+<div class="all-prod">
+  <h2>Todos Os Produtos Disponíveis</h2>
+  {{#if mensagem}}
+  <p>{{mensagem}}</p>
+  {{/if}}
+  <!-- Swiper -->
+  <div class="swiper mySwiper_3">
+    <div class="swiper-wrapper" id="cards-container">
+
+      {{#each produtos}}
+      <div class="swiper-slide">
+       <div class="card card-home">
+  <div class="card-image">
+    <img src="/imagens/{{this.imagem}}" alt="{{this.nome}}">
+  </div>
+  <div class="card-content">
+    <h3 class="product-name">{{this.nome}}</h3>
+    <div class="product-rating">★★★★☆</div>
+    <div class="product-price">{{formatarKwanza this.valor}} Kz</div>
+  
+    <a href="/carrinho/adicionar/{{this.codigo}}" 
+   class="btn-buy adicionar-carrinho" 
+   data-id="{{this.codigo}}">
+   Adicionar ao Carrinho
+  </a>
+  </div>
+</div>
+      </div>
+      {{/each}}
+
+    </div>
+
+    <!-- Paginação -->
+    <div class="swiper-pagination swiper-pagination-3"></div>
+
+    <!-- Botões -->
+    <div class="swiper-button-prev swiper-button-prev-3"></div>
+    <div class="swiper-button-next swiper-button-next-3"></div>
+  </div>
+</div>
+
+<div class="servicos">
+  <h2>Nossos Serviços</h2>
+  
+  <div class="box">
+    <img src="/imagens/servicos/concerto telefone.jpg" alt="telefone">
+    <h3>Reparação de Telefones</h3>
+    <p>Consertamos celulares de todas as marcas com agilidade e garantia de qualidade. Soluções rápidas para deixar o seu aparelho como novo.</p>
+  </div>
+
+  <div class="box">
+    <img src="/imagens/servicos/troca de visor.jpg" alt="visor">
+    <h3>Montagem de Visores de Telefone</h3>
+    <p>Troca de tela rachada ou danificada com peças de alta qualidade. Devolvemos a nitidez e a sensibilidade ao toque do seu celular.</p>
+  </div>
+
+  <div class="box">
+    <img src="/imagens/servicos/limpar visor.jpg" alt="limpar">
+    <h3>Aplicação de Películas e Blindagem Para Telefones</h3>
+    <p>Proteja seu aparelho contra riscos e quedas com películas resistentes e blindagens modernas, garantindo mais durabilidade ao visor.</p>
+  </div>
+</div>
+
+
+<div class="trust">
+  <h3>Compras Online, Segurança e Confiança Nas Entregas</h3>
+  
+  <div class="delivery">
+    <span class="material-symbols-outlined">shopping_bag_speed</span>
+    <h4>Entrega Grátis</h4>
+    <p>Receba seus produtos no conforto da sua casa sem custos adicionais. Garantimos rapidez e eficiência em cada entrega realizada.</p>
+  </div>
+
+  <div class="delivery">
+    <span class="material-symbols-outlined">beenhere</span>
+    <h4>100% Segurança de Pagamento</h4>
+    <p>Compre com total tranquilidade. Todos os pagamentos podem ser feitos de forma prática e segura via transferência Multicaixa, Multicaixa Express ou Internet Banking (BAI Directo).</p>
+  </div>
+
+  <div class="delivery">
+    <span class="material-symbols-outlined">house</span>
+    <h4>Qualidade Garantida</h4>
+    <p>Nossos produtos passam por rigorosos padrões de qualidade para oferecer a você durabilidade, confiança e a melhor experiência de compra.</p>
+  </div>
+
+  <div class="delivery">
+    <span class="material-symbols-outlined">featured_seasonal_and_gifts</span>
+    <h4>Ofertas Diárias</h4>
+    <p>Aproveite promoções exclusivas e descontos especiais todos os dias. Preços competitivos e vantagens únicas para você economizar mais.</p>
+  </div>
+
+  <div class="delivery">
+    <span class="material-symbols-outlined">credit_card</span>
+    <h4>Compras Sem Sair De Casa</h4>
+    <p>Peça seus produtos sem precedentes e de onde estiver. Faça suas compras diretamente pelo nosso site,solicitando facilmente via WhatsApp, com atendimento rápido e personalizado.</p>
+  </div>
+</div>
+
+</main>

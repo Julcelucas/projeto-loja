@@ -1,0 +1,141 @@
+/* Importar fontes */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+/* Variáveis de fontes */
+:root {
+  --fonte-poppins: "Poppins", sans-serif;
+  --fonte-roboto: "Roboto", sans-serif;
+  --fonte-oswald: "Oswald", sans-serif;
+  --fonte-garamond: "EB Garamond", serif;
+
+  --cor_1: #060606;
+  --cor_2: #148189;
+  --cor_3: #E5E5E5;
+  --cor_4: #FFFFFF;
+  --cor_5: #FCA311;
+  --cor_6: rgb(176, 176, 3);
+}
+
+/* Reset básico */
+body {
+  margin: 0;
+  font-family: var(--fonte-poppins); /* fonte padrão */
+  background: #f0f2f5; /* cinzento suave */
+  
+}
+
+/* ---------------------------------- Admin Dashboard --------------------------------------- */
+
+
+.admin-header {
+    background: #343a40 !important;
+    color: #fff !important;
+    border-bottom: 1px solid #dee2e6 !important;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05) !important;
+    padding: 25px 20px;
+  }
+  
+  .admin-header h2 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--cor_3); /* mesmo tom que usas no resto */
+  }
+  
+  
+  .admin-header .btn {
+    margin-left: 5px;
+    border-radius: 6px;
+    font-weight: 500;
+  }
+  
+  .dashboard{
+    border: 2px solid #dee2e6;
+    background-color: #f8f9fa; /* cinza suave */
+  }
+  
+  /* Container principal com borda + fundo */
+  .dashboard-container {
+    background-color: #f8f9fa;
+    border: 2px solid #dee2e6;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 100px; /* compensa header fixo */
+  }
+  
+  
+  
+  /* Cards de resumo */
+  .resumo-card {
+    border-radius: 12px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .resumo-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0,0,0,0.15);
+  }
+  .resumo-card h5 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: 600;
+    color: #555;
+  }
+  .resumo-card .display-4 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #222;
+  }
+  
+  /* Tabelas */
+  .table {
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  .table thead th {
+    text-align: center;
+    font-size: 0.95rem;
+    font-weight: 600;
+  }
+  .table td,
+  .table th {
+    vertical-align: middle;
+    text-align: center;
+    padding: 12px;
+  }
+  .table-hover tbody tr:hover {
+    background: #f1f3f5;
+  }
+  .table .btn {
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+  }
+  
+  /* Footer */
+  /* Footer do Dashboard */
+  .dashboard-footer {
+    background: #343a40 !important; /* igual ao header */
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 10px 0;
+    text-align: center;
+    border-top: none;
+  }
+
+
+
+  /* ---------------Ajustar botões do formulário de edição ------------------*/
+.form-editar-funcionario .btn {
+  font-size: 0.9rem; /* texto menor */
+  padding: 8px 16px; /* botão proporcional */
+  border-radius: 6px; /* cantos suaves */
+  font-weight: 500; /* texto mais elegante */
+}
+
+.form-editar-funcionario .btn + .btn {
+  margin-left: 8px; /* espaço entre os dois botões */
+}
+
+  

@@ -1,0 +1,41 @@
+<main>
+  <div id="searchOverlay">
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Procurando algo?" class="form-control" autofocus>
+      <span id="searchAction" class="material-symbols-outlined">search</span>
+    </div>
+
+    <!-- Mensagens -->
+    <div id="mensagens-container">
+      {{> mensagens }}
+    </div>
+
+    <!-- Resultados -->
+    <div id="results-container">
+      {{#if produtos.length}}
+        {{#each produtos}}
+          <div class="card card-home card-search">
+            <div class="card-image">
+              <img src="/imagens/{{this.imagem}}" alt="{{this.nome}}">
+            </div>
+            <div class="card-content">
+              <h3 class="product-name">{{this.nome}}</h3>
+              <div class="product-rating">★★★★☆</div>
+              <div class="product-price">{{formatarKwanza this.valor}} Kz</div>
+              <a href="/carrinho/adicionar/{{this.codigo}}" 
+   class="btn-buy adicionar-carrinho" 
+   data-id="{{this.codigo}}">
+   Adicionar ao Carrinho
+  </a>
+            </div>
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
+
+    <button id="closeOverlay" class="btn-voltar">
+      <span class="material-symbols-outlined">arrow_back</span>
+      <p>Voltar</p>
+    </button>
+  </div>
+</main>

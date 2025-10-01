@@ -1,0 +1,223 @@
+
+  /* Para telas maiores que 768px (tablets e desktops) */
+  @media (min-width: 768px) {
+    main{
+      width: 80%; /* controla a largura do conteúdo */
+      margin: 0 auto; /* centraliza */
+      max-width: 1250px;
+    }
+
+
+    /*------------- Header -------------*/
+    .logo h1 {
+      font-size: 2.2rem;
+    }
+
+      /*------------- First Swiper -------------*/
+      .first-slide .swiper {
+        height: 580px;
+      }
+
+
+      /*------------- Second Swiper -------------*/
+      .ver-categ .swiper {
+        width: 70%;
+        height: 270px;
+      }
+      .mySwiper_2 .swiper-slide img {
+        width: 40%;
+      }
+      .mySwiper_2 .swiper-slide p{
+        font-size: 1.4rem;
+      }
+
+      /*------------- Third Swiper -------------*/
+      .swiper-slide{
+        background-color: white;
+    }
+
+    .trust{
+        margin-bottom: -15px;
+    }
+
+    .box {
+        max-width: 700px;
+      }
+      .box img{
+        max-height: 600px;
+      }
+
+      .box h3{
+        padding-top: 60px;
+      }
+
+      /*-------------Entregas 5 Div -------------*/
+      .delivery{
+        margin: 0 auto;
+        width: 80%;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+      }
+
+      /*--------------- Footer --------------*/
+      
+footer{
+  padding-top: 20px;
+  padding-left: 50px;
+}      
+footer h3{
+  font-size: 2.2rem;
+}
+
+footer h4{
+  font-size: 1.6rem;
+}
+.call span{
+  font-size: 1.2rem;
+}
+.place p, .place li{
+  font-size: 1.2rem;
+}
+.copy{
+  font-size: 1.5rem !important;
+}
+
+i {
+  font-size: 30px;
+  padding: 10px;
+}
+
+/*-------------carrinho----------*/
+.carrinho-total{
+  border: none;
+  margin: 0;
+  width: 65%;
+ }
+
+ .carrinho-total hr{
+  display: block;
+}
+/*------------------------------Categoria Home--------------*/
+.main-category{
+  height: 100vh;
+}
+  }
+  
+@media (max-width: 767px) {
+
+   /*------------- First Swiper -------------*/ 
+   .first-slide .swiper {
+    height: 560px;
+  }
+   
+   .first-slide .swiper-slide img {
+    height: 580px;
+  }
+  .first-slide .slide-text h2 {
+    font-family: var(--fonte-garamond);
+    font-weight: 200;
+    font-size: 1.9rem;
+    margin-bottom: 10px;
+    padding: 20px 90px 0 50px;
+  }
+  
+  .first-slide .slide-text p {
+    font-size: 1rem;
+    font-weight: normal;
+    padding: 20px 90px 30px 50px;
+    width: 100%;
+  }
+
+   /*------------- Second Swiper -------------*/
+   .ver-categ .swiper {
+    width: 100%;
+    height: 170px;
+  }
+
+  .mySwiper_2 .swiper-slide img {
+    width: 35%;
+  }
+
+  .categ-texto .seta{
+    padding-top: 20px;
+  }
+
+  .categ-texto h2 {
+    font-size: 1.7rem;
+  }
+
+  .categ-texto p{
+    font-size: 1.2rem;
+  }
+
+  .categ-botoes{
+    padding-top: 65px;
+  }
+
+  /*------------- Third Swiper -------------*/
+  .all-prod h2{
+    font-size: 1.7rem;
+    text-align: center;
+    padding-left: 0;
+  }
+
+  footer div{
+    padding-bottom: 20px;
+}
+
+/*---------------------- Category Area ---------------*/
+.category{
+ max-width: 290px;
+ margin: auto;
+ justify-content: center;
+}
+
+/*---------------------- Search Area ---------------*/
+#results-container{
+  max-width: 290px;
+ margin: auto;
+ justify-content: center;
+}
+
+.btn-voltar {
+    left: 5%;
+}
+
+   
+}  
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  /*------------- Second Swiper -------------*/
+  .ver-categ .swiper {
+    width: 100%;
+    height: 210px;
+  }
+
+  .mySwiper_2 .swiper-slide img {
+    width: 40%;
+  }
+
+  .categ-botoes{
+  padding-top: 5px;
+  }
+
+  /*---------------------- Category Area ---------------*/
+  .category{
+  max-width: 290px;
+  margin: auto;
+  justify-content: center;
+ }
+ 
+ /*---------------------- Search Area ---------------*/
+ #results-container{
+   max-width: 290px;
+  margin: auto;
+  justify-content: center;
+ }
+
+ .btn-voltar {
+    left: 21%;
+}
+
+}
+

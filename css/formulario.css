@@ -1,0 +1,345 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--fonte-roboto);
+  background-color: var(--cor_3);
+  color: var(--cor_1);
+  padding-top: 80px;
+}
+
+
+:root {
+  --fonte-poppins: "Poppins", sans-serif;
+  --fonte-roboto: "Roboto", sans-serif;
+  --fonte-oswald: "Oswald", sans-serif;
+  --fonte-garamond: "EB Garamond", serif;
+
+  --cor_1: #060606;
+  --cor_2: #148189;
+  --cor_3: #E5E5E5;
+  --cor_4: #FFFFFF;
+  --cor_5: #FCA311;
+  --cor_6: rgb(176, 176, 3);
+
+}
+
+h2 {
+  font-family: var(--fonte-oswald);
+  color: var(--cor_2);
+}
+
+h4, h3{
+  font-family: var(--fonte-oswald); 
+}
+
+p {
+  font-family: var(--fonte-roboto);
+  color: var(--cor_1);
+}
+
+a {
+  text-decoration: none;
+  color: var(--cor_2);
+}
+
+/* Topo */
+.topo {
+    background-color: #fff;
+    padding: 25px 20px !important;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    
+  }
+  
+  .topo .cad {
+    font-weight: 600;
+    color: var(--cor_2);
+    cursor: pointer;
+    padding-left: 10px;
+  }
+  
+  #filtroCategoria {
+    min-width: 180px;
+  }
+  
+  /* Inputs e selects gerais */
+  form input, form select {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 15px;
+  }
+  
+  /* Container principal */
+  main.container.my-4 {
+    border-radius: 12px;
+    padding: 20px;
+    background-color: #ffffff;
+    margin-top: 60px !important;
+  }
+  
+  /* Formulário de Cadastro */
+  #formularioCadastro form {
+    background-color: #f0f2f5;
+    padding: 30px 25px;
+    border-radius: 18px !important;
+    box-shadow: 0 4px 12px #0000001a;
+    border: 1px solid #e4e2e2;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+  
+
+
+  /* Título do formulário */
+  #formularioCadastro h4 {
+    color: var(--cor_2);
+    font-family: var(--fonte-oswald);
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Inputs e selects do formulário */
+  #formularioCadastro input,
+  #formularioCadastro select {
+    border-radius: 8px;
+    padding: 10px;
+    font-size: 15px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+  }
+  
+  #formularioCadastro input:focus,
+  #formularioCadastro select:focus {
+    border-color: var(--cor_2);
+    outline: none;
+  }
+  
+  /* Botão do formulário */
+  #formularioCadastro button {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: var(--cor_2);
+    color: var(--cor_4);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  #formularioCadastro button:hover {
+    background-color: #0f626b;
+  }
+  
+  /* Cards de Produtos */
+  .produto-card {
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #fff;
+  }
+  
+  .produto-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+  }
+  
+  /* Imagem do card */
+  .produto-card img {
+    object-fit: contain;
+    width: 100%;
+    height: 240px;
+    display: block;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.096);
+    padding: 10px;
+  }
+  
+  /* Card body */
+  .produto-card .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  
+  /* Conteúdo principal do card (nome, categoria, preço) */
+  .produto-card .card-content {
+    flex: 1;
+  }
+  
+  /* Botões Editar e Remover */
+  .produto-card .card-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    margin-top: 10px;
+  }
+  
+  .produto-card .card-buttons button {
+    flex: 1;
+    max-width: 48%;
+    padding: 8px 0;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.3s;
+  }
+  
+  .produto-card .card-buttons .editar {
+    background-color: #ffc107;
+    color: #fff;
+  }
+  
+  .produto-card .card-buttons .editar:hover {
+    background-color: #e0a800;
+  }
+  
+  .produto-card .card-buttons .remover {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .produto-card .card-buttons .remover:hover {
+    background-color: #c82333;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .topo {
+        flex-direction: column;
+        gap: 10px;
+    }
+  
+    #filtroCategoria {
+        width: 100%;
+    }
+  
+    .produto-card img {
+        height: 200px;
+    }
+  
+    #formularioCadastro form {
+        margin: 20px 0;
+    }
+  }
+
+@media (max-width: 767px) {
+  /* Container principal */
+  main.container.my-4 {
+    margin-top: 190px !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1023px){
+  /* Container principal */
+  main.container.my-4 {
+    margin-top: 140px !important;
+  }
+}
+
+  
+
+  
+
+  
+  /* -----------------------------Formulario Editar---------------------------------------- */
+  #formularioEditar {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+  
+  #formularioEditar .col-6 {
+    background: #fff;
+    padding: 25px 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  #formularioEditar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-weight: 600;
+    color: #343a40;
+  }
+  
+  /* Imagem do produto */
+  #formularioEditar img {
+    display: block;
+    max-width: 150px;
+    height: auto;
+    margin: 0 auto 20px auto;
+    border-radius: 10px;
+    border: 2px solid #dee2e6;
+    padding: 5px;
+    background: #f8f9fa;
+  }
+  
+  /* Inputs */
+  #formularioEditar .form-control {
+    margin-bottom: 18px;
+    border-radius: 8px;
+    padding: 14px 16px; /* aumenta o espaço interno */
+    font-size: 1rem; /* letras maiores */
+    height: auto; /* deixa altura ser adaptada ao padding */
+    border: 1px solid #ced4da;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  /* Select ajustado */
+  #formularioEditar select.form-control {
+    appearance: none; /* remove seta padrão feia */
+    background-color: #fff;
+    cursor: pointer;
+    font-size: 1rem;
+    padding-right: 30px; /* espaço extra pra seta */
+  }
+  
+  #formularioEditar .form-control:focus {
+    border-color: #0d6efd;
+    box-shadow: 0 0 0 0.15rem rgba(13,110,253,0.25);
+  }
+  
+  /* Botões */
+  #formularioEditar .btn {
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-weight: 500;
+  }
+  
+  #formularioEditar .btn-primary {
+    background: #0d6efd;
+    border-color: #0d6efd;
+  }
+  
+  #formularioEditar .btn-primary:hover {
+    background: #0b5ed7;
+    border-color: #0a58ca;
+  }
+  
+  #formularioEditar .btn-secondary {
+    background: #6c757d;
+    border-color: #6c757d;
+  }
+  
+  #formularioEditar .btn-secondary:hover {
+    background: #5c636a;
+    border-color: #565e64;
+  }

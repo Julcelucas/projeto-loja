@@ -1,0 +1,207 @@
+/* Importar fontes */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap");
+
+/* Variáveis de fontes */
+:root {
+  --fonte-poppins: "Poppins", sans-serif;
+  --fonte-roboto: "Roboto", sans-serif;
+  --fonte-oswald: "Oswald", sans-serif;
+  --fonte-garamond: "EB Garamond", serif;
+
+  --cor_1: #060606;
+  --cor_2: #148189;
+  --cor_3: #E5E5E5;
+  --cor_4: #FFFFFF;
+  --cor_5: #FCA311;
+  --cor_6: rgb(176, 176, 3);
+}
+
+/* Reset básico */
+body {
+  margin: 0;
+  font-family: var(--fonte-poppins); /* fonte padrão */
+  background: #f0f2f5; /* cinzento suave */
+  
+}
+
+/* Container central só para páginas de autenticação */
+.auth-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* ocupa a tela toda */
+  font-family: var(--fonte-poppins);
+}
+
+/* Card */
+.login-container {
+  width: 100%;
+  padding: 15px;
+}
+.login-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  font-family: var(--fonte-poppins);
+  width: 400px;
+}
+@media (min-width: 768px) {
+  .login-card {
+    width: 600px;
+    padding: 50px;
+  }
+}
+
+
+/* Ícone */
+.user-icon {
+  width: 100px;
+  height: 100px;
+  background: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  color: #555;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+  margin: 0 auto 20px auto;
+  font-family: var(--fonte-roboto);
+}
+
+/* Títulos */
+.auth-page h1,
+.auth-page h2 {
+  font-family: var(--fonte-garamond);
+  font-weight: 800;
+}
+
+/* Subtítulos e parágrafos */
+.auth-page p {
+  font-family: var(--fonte-roboto);
+  font-weight: 400;
+}
+
+.material-icons{
+    color: var(--cor_2);
+    font-size: 35px;
+}
+/* Inputs */
+.input-icon {
+  position: relative;
+  margin-bottom: 20px;
+}
+.input-icon i {
+  position: absolute;
+  top: 50%;
+  left: 15px;
+  transform: translateY(-50%);
+  color: #303d49;
+  font-size: 18px;
+}
+.input-icon input {
+  font-family: var(--fonte-poppins);
+  padding-left: 45px;
+  border-radius: 50px;
+  border: 1px solid #ddd;
+  height: 45px;
+  transition: 0.3s;
+}
+.input-icon input:focus {
+  border-color: #2575fc;
+  box-shadow: 0 0 8px rgba(37, 117, 252, 0.2);
+  outline: none;
+}
+
+/* Botão */
+.btn-gradient {
+  font-family: var(--fonte-poppins);
+  background: linear-gradient(to right, #6a11cb, #2575fc);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 12px;
+  font-weight: 500;
+  transition: 0.3s;
+}
+.btn-gradient:hover {
+  background: linear-gradient(to right, #2575fc, #6a11cb);
+}
+
+/* Links */
+.text-primary {
+  font-family: var(--fonte-roboto);
+  color: #2575fc !important;
+  text-decoration: none;
+}
+.text-primary:hover {
+  text-decoration: underline;
+}
+
+/* Divisor */
+hr {
+  margin: 20px 0;
+  border-top: 1px solid #eee;
+  font-family: var(--fonte-garamond); /* detalhe elegante */
+}
+
+
+
+/* ---------------------------Menu Admini Container central------------------------------- */
+.admin-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f0f2f5;
+}
+
+/* Card */
+.admin-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Título */
+.admin-card h2 {
+  margin-bottom: 10px;
+  color: #333;
+}
+
+/* Botões */
+.admin-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.admin-btn {
+  display: inline-block;
+  padding: 12px;
+  background: #007bff;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.admin-btn:hover {
+  background: #0b7d8c;
+  text-decoration: none;
+  color: var(--cor_3);
+}
+
+

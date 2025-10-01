@@ -1,0 +1,29 @@
+<main class="main-category">
+  <div class="category">
+    <h2 class="categoria-produto">Categoria: {{categoria}}</h2>
+    
+    {{> mensagens}} <!-- ✅ usa o partial já existente -->
+    
+    <div id="results-container">
+      {{#if vazio}}
+        <p class="mensagem-vazia">Nenhum produto encontrado nesta categoria.</p>
+      {{else}}
+        {{#each produtos}}
+          <div class="card card-home">
+            <div class="card-image">
+              <img src="/imagens/{{this.imagem}}" alt="{{this.nome}}">
+            </div>
+            <div class="card-content">
+              <h3 class="product-name">{{this.nome}}</h3>
+              <div class="product-rating">★★★★☆</div>
+              <div class="product-price">{{formatarKwanza this.valor}} Kz</div>
+              <a href="/carrinho/adicionar/{{this.codigo}}" 
+              class="btn-buy adicionar-carrinho" data-id="{{this.codigo}}">Adicionar ao Carrinho
+              </a>
+            </div>
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+</main>

@@ -1,0 +1,16 @@
+<main class="container my-5">
+
+  <h2 class="mb-4">Confirme o código enviado ao seu e-mail</h2>
+
+  {{!-- Mensagens --}}
+  {{> mensagens}}
+
+  <form action="/confirmar-codigo" method="POST" class="col-md-6">
+    <div class="mb-3">
+      <label for="codigo" class="form-label">Código de verificação</label>
+      <input type="text" class="form-control" id="codigo" name="codigo" placeholder="Digite o código" required>
+    </div>
+    <button type="submit" class="btn btn-primary">Confirmar código</button>
+  </form>
+
+</main>

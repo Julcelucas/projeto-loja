@@ -1,0 +1,58 @@
+/*-------------------Footer-------------*/
+footer{
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+footer div{
+    padding-bottom: 30px;
+}
+
+footer h3{
+    padding-bottom: 40px;
+}
+
+footer h4{
+    font-size: 1.2rem;
+    font-weight: normal;
+}
+
+.local p{
+    margin-top: -15px;
+    font-weight: normal;
+}
+
+.call span{
+    font-size: 1rem;
+    padding-left: 2px;
+    font-style: italic;
+}
+
+.place p, .place li{
+    font-weight: normal;
+    font-size: 0.9rem;
+    list-style: none;
+}
+
+.place ul{
+    padding-top: 7px;
+}
+
+.place li{
+    margin-left: -30px;
+    padding-bottom: 3px;
+}
+
+.copy{
+    font-size: 1rem !important;
+    text-align: center;
+}
+
+i {
+    font-size: 25px;
+    color: white;
+    margin-right: 25px;
+    border-radius: 50%;
+    border: 1px solid #ffffff93;
+    padding: 12px;
+  }

@@ -1,0 +1,305 @@
+@charset "UTF-8";
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --fonte-poppins: "Poppins", sans-serif;
+  --fonte-roboto: "Roboto", sans-serif;
+  --fonte-oswald: "Oswald", sans-serif;
+  --fonte-garamond: "EB Garamond", serif;
+
+  --cor_1: #060606;
+  --cor_2: #148189;
+  --cor_3: #E5E5E5;
+  --cor_4: #FFFFFF;
+  --cor_5: #FCA311;
+  --cor_6: rgb(176, 176, 3);
+
+}
+
+h2 {
+  font-family: var(--fonte-oswald);
+  color: var(--cor_2);
+}
+
+h4, h3{
+  font-family: var(--fonte-oswald); 
+}
+
+p {
+  font-family: var(--fonte-roboto);
+  color: var(--cor_1);
+}
+
+a {
+  text-decoration: none;
+  color: var(--cor_2);
+}
+
+
+
+/* ---------------- Carrinho completo (substituir arquivo) ----------------------------- */
+
+:root{
+    --carrinho-footer-height: 120px; /* ajusta se quiseres footer maior/menor */
+  }
+  
+  .mala {
+    box-sizing: border-box;
+    padding: 40px;
+    padding-top: 50px !important;
+    background-color: var(--cor_4);
+    height: 100vh; /* ocupa toda a janela */
+    display: flex;
+    flex-direction: column;
+    font-family: var(--fonte-roboto);
+  }
+  
+  .bag-lista {
+    flex: 1;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    /* garante espaço para o footer fixo não cobrir o último item */
+    padding-bottom: calc(var(--carrinho-footer-height) + 16px);
+  }
+  
+  
+  .bag-item {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    padding: 18px 12px;
+    border-bottom: 1px solid #6a6a6a96;
+    border-radius: 8px;
+    margin-top: 18px;
+    background: transparent;
+  }
+  
+  .bag-item img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  
+  /* Conteúdo à direita da imagem */
+  .bag-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+  }
+  
+  /* Nome + preço */
+  .bag-pricename {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .bag-pricename h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    color: var(--cor_1);
+  }
+  
+  .bag-pricename p {
+    margin: 0;
+    font-size: 1.05rem;
+    color: var(--cor_1);
+    padding-top: 5px;
+  }
+  
+  
+  .plus-rem {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    margin-top: 8px;
+  }
+  
+  
+  .btn-quantidade,
+  .btn-remover {
+    all: unset;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  
+  .quantidade-controle {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid #6a6a6a96;
+    border-radius: 6px;
+    padding: 6px 12px;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.03);
+  }
+  
+  .less { margin-right: 0; }
+  .plus { margin-left: 0; }
+  
+  .btn-remover {
+    font-size: 1rem;
+    color: #d33;
+    padding: 4px 6px;
+  }
+  
+  .carrinho-total {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    width: 100%;
+    max-width: 1000px;
+    transform: translateX(-50%);
+    background: var(--cor_1);
+    border-top: 1px solid #6a6a6a96;
+    box-shadow: 0 -6px 18px rgba(0,0,0,0.06);
+    padding: 0px 10px 15px 10px;
+    
+  }
+  
+  .carrinho-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column; 
+    gap: 12px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 6px 0;
+  }
+  
+  .carrinho-linha {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 12px;
+    padding-top: 15px;
+  }
+  
+  .total-left {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--cor_4);
+    font-weight: 400;
+    padding-left: 5px;
+  }
+  
+  .total-right {
+    margin: 0;
+    font-size: 1.5rem;
+    color: var(--cor_3);
+    font-weight: 500;
+    padding-right: 5px;
+  }
+  
+  .whatsapp-final {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  
+  .whatsapp-final img.whatsapp-left {
+    width: 65px;
+    object-fit: contain;
+  }
+  
+  .btn-finalizar {
+    all: unset;
+    display: inline-block;
+    background-color: #06a240; 
+    color: #ffffff;
+    padding: 14px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  
+  .btn-finalizar:hover {
+    transform: translateY(-3px);
+    transition: ease;
+    background-color: #01b643; 
+  }
+  
+  .btn-finalizar:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  
+  
+  .carrinho-total hr { display: none; }
+  
+  .bag-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* garante que a mensagem fica visível acima do footer */
+    min-height: calc(100vh - var(--carrinho-footer-height) - 40px);
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .mala-vazia {
+    font-size: 95px;
+    color: var(--cor_1);
+    margin-bottom: 18px;
+  }
+  
+  .texto-vazio {
+    font-size: 1.5rem;
+    font-family: var(--fonte-roboto);
+    color: var(--cor_1);
+    font-weight: 600;
+  }
+  
+  /* ---------- Responsividade ---------- */
+  @media (max-width: 768px) {
+    .mala { padding: 20px; }
+    .bag-item { gap: 12px; padding: 14px 8px; }
+    .bag-item img { width: 90px; height: 90px; }
+  
+    .carrinho-inner { gap: 10px; padding: 8px 0; }
+    .total-right { font-size: 1.25rem; }
+  
+    .carrinho-linha { align-items: center; }
+    .whatsapp-final { gap: 10px; }
+    .btn-finalizar { width: auto; padding: 12px 14px; font-size: 1rem; }
+
+      .whatsapp-final img.whatsapp-left {
+        width: 55px;
+      }
+  }
+
+  @media (min-width:768px) and (max-width: 1024px) and (orientation: portrait) {
+    .mala {
+        padding-top: 80px !important;
+      }
+
+  }
+  
+  /* Utility: garante espaço extra final se necessário (protege o último item) */
+  .bag-lista::after {
+    content: "";
+    display: block;
+    height: calc(var(--carrinho-footer-height) / 2);
+  }
+  

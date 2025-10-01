@@ -1,0 +1,142 @@
+{{!-- ===========================
+     MENSAGENS DE PRODUTOS
+=========================== --}}
+{{#condicionalIgualdade situacao "okCadastro"}}
+  <div class="alert alert-success">Produto cadastrado com sucesso!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "okEdicaoProduto"}}
+  <div class="alert alert-success">Produto editado com sucesso!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "okRemover"}}
+  <div class="alert alert-success">Produto removido com sucesso!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaCadastro"}}
+  <div class="alert alert-danger">Falha ao cadastrar o produto, tente novamente!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaEdicaoProduto"}}
+  <div class="alert alert-danger">Falha ao editar o produto, tente novamente!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaRemoverProduto"}}
+  <div class="alert alert-danger">Falha ao remover o produto, tente novamente!</div>
+{{/condicionalIgualdade}}
+
+
+{{!-- ===========================
+     MENSAGENS DE USUÁRIOS
+=========================== --}}
+{{#condicionalIgualdade situacao "okUsuario"}}
+  <div class="alert alert-success">Cadastro realizado com sucesso!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaCodigo"}}
+  <div class="alert alert-danger">Código secreto incorreto!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaNome"}}
+  <div class="alert alert-danger">Nome deve começar com letra maiúscula.</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaEmailFormato"}}
+  <div class="alert alert-danger">Formato de e-mail inválido.</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaSenhaComplexa"}}
+  <div class="alert alert-danger">
+    A senha deve conter letras, números e caracteres especiais.
+  </div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaSenha"}}
+  <div class="alert alert-danger">Senhas não conferem.</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaEmail"}}
+  <div class="alert alert-danger">E-mail já cadastrado!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaRegistrar"}}
+  <div class="alert alert-danger">Erro inesperado ao registrar. Tente novamente.</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaLogin"}}
+  <div class="alert alert-danger">Usuário ou senha inválidos!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "okLogin"}}
+  <div class="alert alert-success">Login realizado com sucesso.</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "okLogout"}}
+  <div class="alert alert-success">Logout realizado com sucesso.</div>
+{{/condicionalIgualdade}}
+
+
+{{!-- ===========================
+     MENSAGENS DE FUNCIONÁRIOS
+=========================== --}}
+{{#condicionalIgualdade situacao "okEdicaoFuncionario"}}
+  <div class="alert alert-success">✅ Funcionário atualizado com sucesso!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaEdicaoFuncionario"}}
+  <div class="alert alert-danger">❌ Falha ao atualizar funcionário!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "okRemoverFuncionario"}}
+  <div class="alert alert-success">✅ Funcionário excluído com sucesso!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaRemoverFuncionario"}}
+  <div class="alert alert-danger">❌ Falha ao excluir funcionário!</div>
+{{/condicionalIgualdade}}
+
+
+{{#condicionalIgualdade situacao "falhaSenhaFuncionario"}}
+  <div class="alert alert-danger">❌ Senhas não conferem!</div>
+{{/condicionalIgualdade}}
+
+
+{{!-- =========================== MENSAGENS DE ESQUECEU/REDEFINIR SENHA====================== --}}
+
+{{#condicionalIgualdade situacao "okEmailEnviado"}}
+  <div class="alert alert-success">✅ Link para redefinir a senha enviado para seu e-mail!</div>
+{{/condicionalIgualdade}}
+
+
+{{#condicionalIgualdade situacao "falhaEmailNaoCadastrado"}}
+  <div class="alert alert-danger">❌ E-mail não cadastrado!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaTokenInvalido"}}
+  <div class="alert alert-danger">❌ Token inválido ou expirado!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "okSenhaRedefinida"}}
+  <div class="alert alert-success">✅ Senha redefinida com sucesso!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaRedefinirSenha"}}
+  <div class="alert alert-danger">❌ Falha ao redefinir senha. Tente novamente!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaSenhaRedefinir"}}
+  <div class="alert alert-danger">❌ Senhas não conferem ou não atendem aos critérios!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "okCodigoValidado"}}
+  <div class="alert alert-success">✅ Código validado com sucesso, agora redefina sua senha!</div>
+{{/condicionalIgualdade}}
+
+{{#condicionalIgualdade situacao "falhaCodigoRedefinir"}}
+  <div class="alert alert-danger">❌ Código de redifinição incorrecto!</div>
+{{/condicionalIgualdade}}
+
+
+
+
+

@@ -1,0 +1,53 @@
+<main>
+  <div class="mala">
+
+    {{#if produtosCarrinho.length}}
+      <!-- 🔹 Área rolável só para os produtos -->
+      <div class="bag-lista">
+        {{#each produtosCarrinho}}
+          <div class="bag-item">
+            <img src="/imagens/{{this.imagem}}" alt="{{this.nome}}">
+            <div class="bag-info">
+              <div class="bag-pricename">
+                <h3>{{this.nome}}</h3>
+                <p>{{formatarKwanza this.valor}} AKZ</p>
+              </div>
+              <div class="plus-rem">
+                <form action="/carrinho/atualizar/{{this.id}}" method="POST" class="quantidade-controle">
+                  <button type="submit" name="action" value="decrement" class="btn-quantidade less">-</button>
+                  <span>{{this.quantidade}}</span>
+                  <button type="submit" name="action" value="increment" class="btn-quantidade plus">+</button>
+                </form>
+                <form action="/carrinho/remover/{{this.id}}" method="POST" class="remove-bag">
+                  <button type="submit" class="btn-remover">Remover</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+
+      <!-- 🔹 Área fixa do total -->
+      <div class="carrinho-total">
+        <div class="carrinho-linha total-price">
+          <h4 class="total-left">Total</h4>
+          <h4 class="total-right">{{formatarKwanza total}} AKZ</h4>
+        </div>
+
+        <div class="carrinho-linha whatsapp-final">
+          <img src="/imagens/mala/whatsapp.png" alt="whatsapp" class="whatsapp-left">
+          <a href="/carrinho/finalizar" class="btn-finalizar whatsapp-right" target="_blank">
+            Finalizar Compra
+          </a>
+        </div>
+      </div>
+
+    {{else}}
+      <div class="bag-empty">
+        <span class="material-symbols-outlined mala-vazia">shopping_bag</span>
+        <p class="texto-vazio">O carrinho está vazio</p>
+      </div>
+    {{/if}}
+
+  </div>
+</main>
