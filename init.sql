@@ -4,8 +4,8 @@
 -- Descrição: Criação completa das tabelas principais
 -- ==============================================
 
-CREATE DATABASE IF NOT EXISTS projecto CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE projecto;
+CREATE DATABASE IF NOT EXISTS railway CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE railway;
 
 -- ==============================================
 -- 1️⃣ Tabela: usuarios
