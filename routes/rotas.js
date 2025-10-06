@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
+require("dotenv").config();
 const mysql = require('mysql2');
 const bcrypt = require('bcryptjs')
 const transporter = require("../js/mailer")
@@ -11,20 +12,30 @@ const {validarCodigoSecreto} = require("../app")
 
 const router = express.Router();
 
-// ------------------------------
-// Conexão com MySQL
-// ------------------------------
-const conexao = mysql.createConnection({
-  host: process.env.DB_HOST, // host do Railway
-  user: process.env.DB_USER, // usuário do Railway
-  password: process.env.DB_PASS, // senha do Railway
-  database: process.env.DB_NAME, // nome do banco no Railway
-  port: process.env.DB_PORT
-});
+// Se existir DATABASE_URL (como no Railway), usa ela
+let conexao;
 
+if (process.env.DATABASE_URL) {
+  conexao = mysql.createConnection(process.env.DATABASE_URL);
+  console.log("🌐 Usando conexão com DATABASE_URL (Railway)");
+} else {
+  conexao = mysql.createConnection({
+    host: process.env.DB_HOST || "localhost",
+    user: process.env.DB_USER || "root",
+    password: process.env.DB_PASS || "",
+    database: process.env.DB_NAME || "projecto",
+    port: process.env.DB_PORT || 3306,
+  });
+  console.log("💻 Usando conexão local (localhost)");
+}
+
+// Teste de conexão
 conexao.connect((erro) => {
-  if (erro) return console.log('❌ Erro na conexão:', erro.message);
-  console.log('✅ Conexão bem-sucedida ao Railway!');
+  if (erro) {
+    console.error("❌ Erro na conexão:", erro.message);
+  } else {
+    console.log("✅ Conexão bem-sucedida ao banco de dados!");
+  }
 });
 
 
@@ -1040,3 +1051,4 @@ router.get("/funcionarios/remover/:id", verificarAdmin, (req, res) => {
 // Exportar as rotas
 // ------------------------------
 module.exports = router;
+
