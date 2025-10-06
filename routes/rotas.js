@@ -27,29 +27,6 @@ conexao.connect((erro) => {
   console.log('✅ Conexão bem-sucedida ao Railway!');
 });
 
-  // Executar o init.sql depois de conectar
-  // Ler init.sql
-  const initSql = fs.readFileSync(path.join(__dirname, '../init.sql'), 'utf8');
-
-  // Separar por ponto e vírgula
-  const comandos = initSql
-      .split(';')
-      .map(cmd => cmd.trim())
-      .filter(cmd => cmd.length > 0);
-
-  // Executar cada comando
-  comandos.forEach(sql => {
-      conexao.query(sql, (err) => {
-          if (err) {
-              console.error("❌ Erro ao executar comando:", err);
-          } else {
-              console.log("✅ Comando executado:", sql.split('\n')[0]);
-          }
-      });
-  });
-
-
-
 
 // ------------------------------
 // Rota principal (Home)
