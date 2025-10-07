@@ -12,6 +12,7 @@ const {validarCodigoSecreto} = require("../app")
 
 const router = express.Router();
 
+
 let conexao;
 
 if (process.env.DATABASE_URL) {
@@ -36,7 +37,6 @@ conexao.connect((erro) => {
     console.log("✅ Conexão bem-sucedida ao banco de dados!");
   }
 });
-
 
 // ------------------------------
 // Rota principal (Home)
