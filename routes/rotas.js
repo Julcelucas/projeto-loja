@@ -12,31 +12,46 @@ const {validarCodigoSecreto} = require("../app")
 
 const router = express.Router();
 
-// Se existir DATABASE_URL (como no Railway), usa ela
+// Declara variável principal
 let conexao;
 
+// Se existir DATABASE_URL (ex: no Railway), usa ela
 if (process.env.DATABASE_URL) {
-  conexao = mysql.createConnection(process.env.DATABASE_URL);
-  console.log("🌐 Usando conexão com DATABASE_URL (Railway)");
+  conexao = mysql.createPool({
+    uri: process.env.DATABASE_URL,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0,
+    ssl: {
+      rejectUnauthorized: true // evita erro de certificado
+    }
+  });
+  console.log("🌐 Usando conexão com DATABASE_URL (Railway ou servidor remoto)");
 } else {
-  conexao = mysql.createConnection({
+  // Caso contrário, usa os dados locais
+  conexao = mysql.createPool({
     host: process.env.DB_HOST || "localhost",
     user: process.env.DB_USER || "root",
     password: process.env.DB_PASS || "",
     database: process.env.DB_NAME || "projecto",
     port: process.env.DB_PORT || 3306,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
   });
   console.log("💻 Usando conexão local (localhost)");
 }
 
-// Teste de conexão
-conexao.connect((erro) => {
+// Teste de conexão (sem fechar)
+conexao.getConnection((erro, conn) => {
   if (erro) {
-    console.error("❌ Erro na conexão:", erro.message);
+    console.error("❌ Erro na conexão com o banco:", erro.message);
   } else {
     console.log("✅ Conexão bem-sucedida ao banco de dados!");
+    conn.release(); // devolve ao pool, não fecha a conexão
   }
 });
+
 
 
 // ------------------------------
