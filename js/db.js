@@ -2,8 +2,6 @@
 require("dotenv").config();
 const mysql = require("mysql2");
 
-
-// Se existir DATABASE_URL (como no Railway), usa ela
 let conexao;
 
 if (process.env.DATABASE_URL) {
@@ -28,5 +26,4 @@ conexao.connect((erro) => {
     console.log("✅ Conexão bem-sucedida ao banco de dados!");
   }
 });
-
 module.exports = conexao;

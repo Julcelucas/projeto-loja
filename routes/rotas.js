@@ -12,7 +12,6 @@ const {validarCodigoSecreto} = require("../app")
 
 const router = express.Router();
 
-// Se existir DATABASE_URL (como no Railway), usa ela
 let conexao;
 
 if (process.env.DATABASE_URL) {
