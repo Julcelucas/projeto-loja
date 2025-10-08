@@ -24,6 +24,23 @@ conexao.connect((erro) => {
     console.error("❌ Erro na conexão:", erro.message);
   } else {
     console.log("✅ Conexão bem-sucedida ao banco de dados!");
+
+    // 🔹 Alterar a coluna "tipo" da tabela "usuarios"
+    const sql = `
+      ALTER TABLE usuarios 
+      MODIFY tipo ENUM('admin', 'funcionario') DEFAULT 'funcionario';
+    `;
+
+    conexao.query(sql, (erro) => {
+      if (erro) {
+        console.error("⚠️ Erro ao modificar a tabela 'usuarios':", erro.message);
+      } else {
+        console.log("✅ Tabela 'usuarios' atualizada com sucesso!");
+      }
+
+      // Fecha a conexão após executar
+      conexao.end();
+    });
   }
 });
 
