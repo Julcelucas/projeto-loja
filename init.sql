@@ -16,9 +16,9 @@ CREATE TABLE IF NOT EXISTS usuarios (
     email VARCHAR(150) NOT NULL UNIQUE,
     senha VARCHAR(255) NOT NULL,
     tipo ENUM('admin', 'funcionario') DEFAULT 'funcionario',
-    codigoToken VARCHAR(10) DEFAULT NULL,
-    expiracaoToken BIGINT DEFAULT NULL,
-    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    codigoToken VARCHAR(10) COLLATE utf8mb4_general_ci DEFAULT NULL,
+    expiracaoToken BIGINT(20) DEFAULT NULL
 );
 
 -- ==============================================
