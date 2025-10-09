@@ -12,30 +12,42 @@ const {validarCodigoSecreto} = require("../app")
 
 const router = express.Router();
 
-let conexao;
+let pool;
 
 if (process.env.DATABASE_URL) {
-  conexao = mysql.createConnection(process.env.DATABASE_URL);
-  console.log("🌐 Usando conexão com DATABASE_URL (Railway)");
+  pool = mysql.createPool({
+    uri: process.env.DATABASE_URL,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
+  });
+  console.log("🌐 Usando pool de conexões com DATABASE_URL (Railway)");
 } else {
-  conexao = mysql.createConnection({
-    host: process.env.DB_HOST, 
+  pool = mysql.createPool({
+    host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASS,
     database: process.env.DB_NAME,
-    port: process.env.DB_PORT
+    port: process.env.DB_PORT,
+    waitForConnections: true,
+    connectionLimit: 10,
+    queueLimit: 0
   });
-  console.log("💻 Usando conexão local (localhost)");
+  console.log("💻 Usando pool de conexões local (localhost)");
 }
 
+const conexao = pool.promise();
+
 // Teste de conexão
-conexao.connect((erro) => {
-  if (erro) {
-    console.error("❌ Erro na conexão:", erro.message);
-  } else {
-    console.log("✅ Conexão bem-sucedida ao banco de dados!");
+(async () => {
+  try {
+    const [rows] = await conexao.query('SELECT 1');
+    console.log('✅ Conexão bem-sucedida ao banco de dados!');
+  } catch (erro) {
+    console.error('❌ Erro na conexão:', erro.message);
   }
-});
+})();
+
 
 // ------------------------------
 // Rota principal (Home)

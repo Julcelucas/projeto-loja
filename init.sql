@@ -7,9 +7,27 @@
 CREATE DATABASE IF NOT EXISTS railway CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 USE railway;
 
--- ==============================================
--- 1️⃣ Tabela: usuarios
--- ==============================================
+-- ============================================
+-- Tabela de usuários (com suporte a redefinição de senha)
+-- ============================================
+CREATE TABLE IF NOT EXISTS usuarios (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(150) NOT NULL UNIQUE,
+    senha VARCHAR(255) NOT NULL,
+    tipo ENUM('admin', 'funcionario') DEFAULT 'funcionario',
+    criado_em TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    codigoToken VARCHAR(10) DEFAULT NULL,
+    expiracaoToken BIGINT DEFAULT NULL
+);
+
+-- ✅ Garante que as colunas de recuperação de senha existam mesmo se a tabela já existir
+ALTER TABLE usuarios
+ADD COLUMN IF NOT EXISTS codigoToken VARCHAR(10) DEFAULT NULL;
+
+ALTER TABLE usuarios
+ADD COLUMN IF NOT EXISTS expiracaoToken BIGINT DEFAULT NULL;
+
 
 -- ==============================================
 -- 2️⃣ Tabela: codigo_secreto
