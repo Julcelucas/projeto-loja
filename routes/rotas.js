@@ -405,7 +405,7 @@ router.get("/carrinho", (req, res) => {
       const cartCount = resultados.reduce((soma, item) => soma + item.quantidade, 0);
   
       res.render("carrinho", {
-        layout: "semlayout",
+        layout: "semLayout",
         produtosCarrinho: resultados,
         vazio: resultados.length === 0,
         total,
