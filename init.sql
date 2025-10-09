@@ -48,11 +48,12 @@ CREATE TABLE IF NOT EXISTS produtos (
 CREATE TABLE IF NOT EXISTS carrinho (
     id INT PRIMARY KEY AUTO_INCREMENT,
     produto_id INT NOT NULL,
-    usuario_id INT NOT NULL,
     quantidade INT DEFAULT 1,
-    UNIQUE KEY unique_produto_usuario (produto_id, usuario_id),
-    FOREIGN KEY (produto_id) REFERENCES produtos(codigo) ON DELETE CASCADE,
-    FOREIGN KEY (usuario_id) REFERENCES usuarios(id) ON DELETE CASCADE
+    usuario_id INT NULL,
+    criado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    atualizado_em TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    INDEX (produto_id),
+    INDEX (usuario_id)
 );
 
 -- ==============================================
