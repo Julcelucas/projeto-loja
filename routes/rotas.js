@@ -12,42 +12,45 @@ const {validarCodigoSecreto} = require("../app")
 
 const router = express.Router();
 
-let pool;
+let conexao;
 
-if (process.env.DATABASE_URL) {
-  pool = mysql.createPool({
-    uri: process.env.DATABASE_URL,
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+function conectarBanco() {
+  if (process.env.DATABASE_URL) {
+    conexao = mysql.createConnection(process.env.DATABASE_URL);
+    console.log("🌐 Usando conexão com DATABASE_URL (Railway)");
+  } else {
+    conexao = mysql.createConnection({
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASS,
+      database: process.env.DB_NAME,
+      port: process.env.DB_PORT
+    });
+    console.log("💻 Usando conexão local (localhost)");
+  }
+
+  conexao.connect((erro) => {
+    if (erro) {
+      console.error("❌ Erro na conexão:", erro.message);
+      setTimeout(conectarBanco, 2000); // tenta reconectar em 2 segundos
+    } else {
+      console.log("✅ Conexão bem-sucedida ao banco de dados!");
+    }
   });
-  console.log("🌐 Usando pool de conexões com DATABASE_URL (Railway)");
-} else {
-  pool = mysql.createPool({
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASS,
-    database: process.env.DB_NAME,
-    port: process.env.DB_PORT,
-    waitForConnections: true,
-    connectionLimit: 10,
-    queueLimit: 0
+
+  // Quando o Railway fechar a conexão, reconecta automaticamente
+  conexao.on('error', (erro) => {
+    console.error('⚠️ Erro de conexão MySQL:', erro.code);
+    if (erro.code === 'PROTOCOL_CONNECTION_LOST' || erro.fatal) {
+      console.log('🔁 Tentando reconectar ao banco...');
+      conectarBanco();
+    } else {
+      throw erro;
+    }
   });
-  console.log("💻 Usando pool de conexões local (localhost)");
 }
 
-const conexao = pool.promise();
-
-// Teste de conexão
-(async () => {
-  try {
-    const [rows] = await conexao.query('SELECT 1');
-    console.log('✅ Conexão bem-sucedida ao banco de dados!');
-  } catch (erro) {
-    console.error('❌ Erro na conexão:', erro.message);
-  }
-})();
-
+conectarBanco();
 
 // ------------------------------
 // Rota principal (Home)
